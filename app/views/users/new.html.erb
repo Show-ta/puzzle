@@ -1,0 +1,10 @@
+<h1>Users#new</h1>
+<p>Find me in app/views/users/new.html.erb</p>
+<%= form_with url:users_new_path do |u| %>
+    <p>User Name</p>
+    <input name="name">
+    <p>Password</p>
+    <input name="password">
+    <br>
+    <input type="submit" value="新規登録">
+<% end %>

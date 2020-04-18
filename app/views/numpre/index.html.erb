@@ -1,5 +1,18 @@
-<h1>Numpre#index</h1>
-<p>Find me in app/views/numpre/index.html.erb</p>
 
-<h1>論理的な思考を鍛えよう！</h1>
 
+<h1>論理的な思考無き数独は数独にあらず</h1>
+<h2>全てを論理的に進められる数独のみを集めました</h2>
+<%= link_to 'About',about_path %>
+<%= link_to '作成',numpre_new_path %>
+<%= link_to 'ユーザー登録',users_new_path %>
+<%= link_to 'ログイン',login_path %>
+<h1>問題一覧</h1>
+
+
+ <% @numpre.each do |numpre| %>
+    <div>
+        <%= link_to "#{numpre.title}" , "/numpre/#{numpre.id}" %>
+    </div>
+ <% end %>
+
+ 

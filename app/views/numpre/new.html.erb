@@ -1,0 +1,21 @@
+<%= stylesheet_link_tag 'numpre' %>
+
+<h1>問題投稿ページ</h1>
+
+<div><p>守っていただきたい問題のルール</p></div>
+<ul>
+    <li>数独本来のルールを守ってください。</li>
+    <li>仮定法・背理法が必要になる問題は投稿しないでください。</li>
+    <li>空欄部分はアンダーバーにしてください。</li>
+    <li>スペースキーを使ってしまうと、問題を読み込めない場合があります。</li>
+    <li>もし詰まってしまった場合、または仮定法を使用しなければ進めない箇所がある時はコメントしてください。ルール違反の問題は迅速に削除させていただきます。</li>
+</ul>
+<%= form_with url:numpre_create_path do %>
+    <div>
+    <p>タイトル</p>
+    <input name="titlee" class="title-form">
+    <p>問題</p>
+    <textarea name="content"　maxlength="81" cols="9" rows="9" class="form"></textarea>
+    <input type="submit" value="完成">
+    </div>
+<% end %>

@@ -7,6 +7,23 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <% current_user=User.find_by(id: session[:user_id]) %>
+
+      <div>
+        <%= link_to('TOPページへ',numpre_index_path) %>
+      </div>
+    <% if session[:user_id] %>
+      
+      <div>ユーザー名:<%= link_to(current_user.name, "/users/#{current_user.id}/show") %></div>
+      <%= link_to('logout',logout_path) %>
+    <% else %>
+      <li>
+#session[:user_id]がfalse　=　ログインしていない時,Signinのリンクを表示する       
+        <%= link_to("Sign_in",signup_path) %> 
+      </li>
+    <% end %>
+
   </head>
 
   <body>
